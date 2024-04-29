@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+// [] {} '' "" \\ ||
+
+
+
+
+namespace ConsoleApp1
+{
+    public class Aufgabe_1
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Enter N: ");
+            double n = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter an opration to count until:  \n 1= Quadrate of N \n 2= Zweierpotenzen of N \n 3= Fakultät \n");
+            int numop = Convert.ToInt32(Console.ReadLine());
+            int num1 = 1; ;
+            if (numop == 1)
+            {
+                n = n * n;
+                while (num1 <= n)
+                {
+                    Console.WriteLine(num1);
+                    num1++;
+                }
+            }
+            else if (numop == 2)
+            {
+                n = Math.Pow(2, n);
+                while (num1 <= n)
+                {
+                    Console.WriteLine(num1);
+                    num1++;
+                }
+
+            }
+            else if (numop == 3)
+            {
+                int x = 1;
+                int y = 1;
+                for ( y = 0; y < n; y++)
+                {
+                    x *= y + 1;
+                }
+                n = x;
+                while (num1 <= n)
+                {
+                    Console.WriteLine(num1);
+                    num1++;
+                }
+            }
+
+
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+            Console.ReadLine();
+
+        }
+
+    }
+
+}
