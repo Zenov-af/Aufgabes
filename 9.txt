@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,67 +15,76 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
-            Console.Write("Enter Number 1 : ");
-            double x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Number 2 : ");
-            double y = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter an opration :  \n 1= Addition of N \n 2= Substrahieren of N \n 3= Multiplikation \n 4=Division \n 5= First to power of Second \n 6= The square root of First 7= Fakultät of first \n");
-            int numop = Convert.ToInt32(Console.ReadLine());
-            int num1 = 1; ;
-            if (numop == 1)
+            int numop = 1;
+            do
             {
-                Console.WriteLine(x + y);
-            }
-            else if (numop == 2)
-            {
-                    Console.WriteLine(x-y);
-            }
-            else if (numop == 3)
-            {
-                    Console.WriteLine(x*y);
-            }
-            else if (numop == 4)
-            {
-                    Console.WriteLine(x/y);
-            }
-            else if (numop == 5)
-            {
-                int b = 1;
-                for ( x ; b < y; b++)
+                Console.Write("Enter Number 1 : ");
+                double x = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter Number 2 : ");
+                double y = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter an opration :  \n 1= Addition of N \n 2= Substrahieren of N \n 3= Multiplikation \n 4= Division \n 5= First to power of Second \n 6= The square root of First \n 7= Fakultät of first \n 8= Quit \n ");
+                 numop = Convert.ToInt32(Console.ReadLine());
+                int num1 = 1; ;
+                if (numop == 1)
                 {
-                    x = x*x;
+                    Console.WriteLine(x + y);
+                }
+                else if (numop == 2)
+                {
+                    Console.WriteLine(x - y);
+                }
+                else if (numop == 3)
+                {
+                    Console.WriteLine(x * y);
+                }
+                else if (numop == 4)
+                {
+                    Console.WriteLine(x / y);
+                }
+                else if (numop == 5)
+                {
+                    double b = 1;
+                    double a = x;
+                    for (a = x; b < y; b++)
+                    {
+                        a = a * a;
                     }
-                Console.WriteLine(x);
-            }
-            else if (numop == 6)
-            {
-                Math.Sqrt(x);
-            }
-            else if (numop == 7)
-            {
-                int a = 1;
-                int b = 1;
-                for (b = 0; b < n; b++)
-                {
-                    a *= b + 1;
+                    x = a;
+                    Console.WriteLine(x);
                 }
-                x = a;
-                while (num1 <= n)
+                else if (numop == 6)
                 {
-                    Console.WriteLine(num1);
-                    num1++;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Invalid input");
-            }
+                    Console.WriteLine(Math.Sqrt(x));
 
-            Console.ReadLine();
+                }
+                else if (numop == 7)
+                {
+                    double a = 1;
+                    double b = 1;
+                    for (b = 0; b < x; b++)
+                    {
+                        a *= b + 1;
+                    }
+                    x = a;
+                    while (num1 <= x)
+                    {
+                        Console.WriteLine(num1);
+                        num1++;
+                    }
+                }
+                else if (numop == 8) { }
+
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                }
+                Console.WriteLine("Restart? (Y/8)");
+                Console.ReadLine();
+
+            }
+            while (numop != 8);
 
         }
 
     }
-
 }
