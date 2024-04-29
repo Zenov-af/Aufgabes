@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+// [] {} '' "" \\ ||
+
+
+
+
+namespace ConsoleApp1
+{
+
+    public class Aufgabe_2
+    {
+        static void Main(string[] args2)
+        {
+            int answer = 1;
+            
+            do
+            {
+                Console.WriteLine("Enter the secret code: ");
+                try
+                {
+                    answer = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("invalid input ");
+                }
+                
+                
+
+            } while (answer != 123);
+
+            Console.WriteLine("Safe is open");
+
+        }
+    }
+}
