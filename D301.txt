@@ -1,6 +1,5 @@
-using System;
 
-namespace D301
+namespace consoleapp1
 {
     class Program
     {
@@ -32,7 +31,7 @@ namespace D301
                 }
                 else
                 {
-                    Console.WriteLine("Invalid throw. Please enter a value between 0 and 20.");
+                    Console.WriteLine ("Invalid throw. Please enter a value between 0 and 20.");
                     continue;
                 }
                 if (score == 0)
@@ -69,14 +68,15 @@ namespace D301
                     Console.WriteLine("Congratulations, Player 2 won!");
                     break;
                 }
-                
+               
+                if (score2 == 0)
+                {
+                    Console.WriteLine("Game over. Player 2 lost.");
+                }
+                turn2++;
             }
 
-            if (score2 == 0)
-            {
-                Console.WriteLine("Game over. Player 2 lost.");
-            }
-            turn2++;
+            
 
         }
     }
