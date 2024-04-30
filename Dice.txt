@@ -25,7 +25,7 @@ namespace consoleapp1
                                   "3.Aufgabe 6: How many time until you get 10x6 \n " +
                                   "4.Aufgabe 7: Double or not \n " +
                                   "5.Aufgabe 8: a) How many often X (between 1 and 12)appears (100000 roll 2 dices/1000) \n " +
-                                  "6.Aufgabe 8: b) how many often each numbers appears (100000 roll 1 dice/1000) \n "+
+                                  "6.Aufgabe 8: b) how many often x (between 1 and 6) appears (100000 roll 1 dice/1000) \n "+
                                   "7.Quit");
                 Choice = Convert.ToInt32(Console.ReadLine());
                 if (Choice == 1)
@@ -148,10 +148,38 @@ namespace consoleapp1
                      }
                     
                 }    
-                // else if (Choice == 6)
-                // {
-                //
-                // }    
+                else if (Choice == 6)
+                {
+                    int x;
+                    Console.WriteLine("Please enter X (number that you want rolled) : ");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    if (x <= 6)
+                    {
+                        int y = 0;
+                        while (rolltime <= 100000)
+                        { 
+                            dice2 = rand.Next(0, 7);
+                            if (dice2 == x)
+                            {
+                                y++;
+                                rolltime++;
+                            }
+
+                            else
+                            {
+                                rolltime++;
+                            }
+                            // Console.WriteLine("the chanse of your number is " + y / 1000 + "%"); //if you want to see the % go up :D
+
+                        }
+                        Console.WriteLine("the chanse of your number is " + y / 1000 + "%");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input");
+                    }
+
+                }    
                 else
                 {
                     Console.WriteLine("Incorrect input");
