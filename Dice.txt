@@ -1,0 +1,164 @@
+using System.ComponentModel.Design;
+using System.Runtime.CompilerServices;
+
+namespace consoleapp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var rand = new Random();
+            int Choice;
+            do
+            {
+                int dice = 0;
+                int dice2;
+                int rolltime2;
+                int collective;
+                int rolltime = 0;
+                int Side;
+
+
+                Console.WriteLine("Welcome to Dice select option \n " +
+                                  "1.Aufgabe 4 :How many times until you get the side you want  \n " +
+                                  "2.Aufgabe 5: If you roll the dice X time how many time you get Y \n " +
+                                  "3.Aufgabe 6: How many time until you get 10x6 \n " +
+                                  "4.Aufgabe 7: Double or not \n " +
+                                  "5.Aufgabe 8: a) How many often X (between 1 and 12)appears (100000 roll 2 dices/1000) \n " +
+                                  "6.Aufgabe 8: b) how many often each numbers appears (100000 roll 1 dice/1000) \n "+
+                                  "7.Quit");
+                Choice = Convert.ToInt32(Console.ReadLine());
+                if (Choice == 1)
+                {
+                    Console.WriteLine("Enter the side that you want: ");
+                    Side = Convert.ToInt32(Console.ReadLine());
+                    if (Side <= 6 && Side >= 1)
+                    {
+                        for (rolltime = 0; dice != Side; rolltime++)
+                        {
+                            dice = rand.Next(0, 7);
+
+                            rolltime++;
+                        }
+
+                        Console.WriteLine(rolltime);
+
+                    }
+                    else if (Side >= 6 || Side <= 1)
+                    {
+                        Console.WriteLine("Number out of scope");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect input");
+                    }
+
+
+                }
+                else if (Choice == 2)
+                {
+                    Console.WriteLine("Please enter X (number of time you roll) : ");
+                    int x = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Please enter Y (side that you want) : ");
+                    int y = Convert.ToInt32(Console.ReadLine());
+                    if (x >= 1 && y >= 1 && y <= 6)
+                    {
+                        int hit = 0;
+                        while (rolltime <= x)
+                        {
+                            int arrow = rand.Next(0, 7);
+
+                            if (arrow != y)
+                                rolltime++;
+                            if (arrow == y)
+                            {
+                                
+                                hit++;
+                            }
+                            
+                        }
+                        Console.WriteLine("It was "+ hit +" time hit");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect input");
+                    }
+                }
+                else if (Choice == 3)
+                {
+                    int hit3 = 0;
+                    while (hit3 < 10)
+                    {
+                        while (dice != 6)
+                        {
+                            dice = rand.Next(0, 7);
+                            rolltime++;
+                        }
+                        hit3++;
+                        rolltime++;
+                    }
+
+                    Console.WriteLine(rolltime);
+                } 
+                else if (Choice == 4)
+                {
+                    dice = rand.Next(0, 7);
+                    dice2 = rand.Next(0, 7);
+                    if (dice == dice2)
+                    {
+                        Console.WriteLine("Double");
+                    }
+                    else
+                    {
+                        Console.WriteLine("not Double");
+                    }
+                }  
+                else if (Choice == 5)
+                {
+                    int x;
+                    Console.WriteLine("Please enter X (number that you want rolled) : ");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    if (x <= 12)
+                    {
+                        int y = 0;
+                        while (rolltime <= 100000)
+                        { 
+                            dice = rand.Next(0, 7);
+                            dice2 = rand.Next(0, 7);
+                            int together = dice + dice2;
+                            if (together == x)
+                            {
+                                y++;
+                                rolltime++;
+                            }
+
+                            else
+                            {
+                                rolltime++;
+                            }
+                            // Console.WriteLine("the chanse of your number is " + y / 1000 + "%"); //if you want to see the % go up :D
+
+                        }
+                        Console.WriteLine("the chanse of your number is " + y / 1000 + "%");
+                    }
+                    else
+                     {
+                         Console.WriteLine("Invalid input");
+                     }
+                    
+                }    
+                // else if (Choice == 6)
+                // {
+                //
+                // }    
+                else
+                {
+                    Console.WriteLine("Incorrect input");
+                }
+
+
+            } while (Choice != 7);
+        }
+    }
+}
