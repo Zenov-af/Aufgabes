@@ -35,7 +35,7 @@ namespace D301
                     Console.WriteLine("Invalid throw. Please enter a value between 0 and 20.");
                     continue;
                 }
-                if (score2 == 0)
+                if (score == 0)
                 {
                     Console.WriteLine("Game over. Player 1 lost.");
                 }
