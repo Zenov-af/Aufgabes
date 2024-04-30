@@ -15,33 +15,34 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int numop = 1;
+            int choice = 1;
             do
             {
                 Console.Write("Enter Number 1 : ");
                 double x = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Enter Number 2 : ");
                 double y = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Enter an opration :  \n 1= Addition of N \n 2= Substrahieren of N \n 3= Multiplikation \n 4= Division \n 5= First to power of Second \n 6= The square root of First \n 7= Fakultät of first \n 8= Quit \n ");
-                 numop = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter an opration :  \n 1= Addition of N \n 2= Substrahieren of N \n 3= Multiplikation \n " +
+                              "4= Division \n 5= First to power of Second \n 6= The square root of First \n 7= Fakultät of first \n 8= Quit \n ");
+                 choice = Convert.ToInt32(Console.ReadLine());
                 int num1 = 1; ;
-                if (numop == 1)
+                if (choice == 1)
                 {
                     Console.WriteLine(x + y);
                 }
-                else if (numop == 2)
+                else if (choice == 2)
                 {
                     Console.WriteLine(x - y);
                 }
-                else if (numop == 3)
+                else if (choice == 3)
                 {
                     Console.WriteLine(x * y);
                 }
-                else if (numop == 4)
+                else if (choice == 4)
                 {
                     Console.WriteLine(x / y);
                 }
-                else if (numop == 5)
+                else if (choice == 5)
                 {
                     double b = 1;
                     double a = x;
@@ -52,12 +53,12 @@ namespace ConsoleApp1
                     x = a;
                     Console.WriteLine(x);
                 }
-                else if (numop == 6)
+                else if (choice == 6)
                 {
                     Console.WriteLine(Math.Sqrt(x));
 
                 }
-                else if (numop == 7)
+                else if (choice == 7)
                 {
                     double a = 1;
                     double b = 1;
@@ -72,17 +73,12 @@ namespace ConsoleApp1
                         num1++;
                     }
                 }
-                else if (numop == 8) { }
-
-                else
+                else if (choice != 8 )
                 {
                     Console.WriteLine("Invalid input");
                 }
-                Console.WriteLine("Restart? (Y/8)");
-                Console.ReadLine();
-
             }
-            while (numop != 8);
+            while (choice != 8);
 
         }
 
