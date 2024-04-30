@@ -26,7 +26,6 @@ namespace ConsoleApp1
             }
             else if (numop == 2)
             {
-                num1 = -100;
                 while (num1 <= 100)
                 {
             
