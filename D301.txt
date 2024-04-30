@@ -1,0 +1,83 @@
+using System;
+
+namespace D301
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int score = 301;
+            int score2 = 301;
+            int currentScore = 0;
+            int currentScore2 = 0;
+            int turn = 1;
+            int turn2 = 1;
+
+
+            Console.WriteLine("Welcome to Darts 301!");
+
+            while (score > 0)
+            {
+                Console.WriteLine($"Player 1 Turn {turn}:");
+                Console.Write("Enter your throw (0-20): ");
+                int throwValue = Convert.ToInt32(Console.ReadLine());
+
+                if (throwValue >= 0 && throwValue <= 20)
+                {
+                    int scoreForThrow = Math.Min(throwValue, score);
+                    currentScore += scoreForThrow;
+                    score -= scoreForThrow;
+
+                    Console.WriteLine($"Player 1 threw {scoreForThrow} and now have a score of {currentScore}.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid throw. Please enter a value between 0 and 20.");
+                    continue;
+                }
+                if (score2 == 0)
+                {
+                    Console.WriteLine("Game over. Player 1 lost.");
+                }
+                if (currentScore >= 301)
+                {
+                    Console.WriteLine("Congratulations, Player 1 won!");
+                    break;
+                }
+
+                turn++;
+                
+                Console.WriteLine($"Player 2 Turn {turn2}:");
+                Console.Write("Enter your throw (0-20): ");
+                int throwValue2 = Convert.ToInt32(Console.ReadLine());
+
+                if (throwValue2 >= 0 && throwValue2 <= 20)
+                {
+                    int scoreForThrow2 = Math.Min(throwValue2, score);
+                    currentScore2 += scoreForThrow2;
+                    score2 -= scoreForThrow2;
+
+                    Console.WriteLine($"Player 2 threw {scoreForThrow2} and now have a score of {currentScore2}.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid throw. Please enter a value between 0 and 20.");
+                    continue;
+                }
+                if (currentScore2 >= 301)
+                {
+                    Console.WriteLine("Congratulations, Player 2 won!");
+                    break;
+                }
+                
+            }
+
+            if (score2 == 0)
+            {
+                Console.WriteLine("Game over. Player 2 lost.");
+            }
+            turn2++;
+
+        }
+    }
+}
