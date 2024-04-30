@@ -10,73 +10,73 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-public class Aufgabe_1
-{
-    static void Main(string[] args){
+    public class Aufgabe_1
+    {
+        static void Main(string[] args){
  
-    Console.Write("Enter an opration \n 1= Zählen -100 bis 100 \n 2= Nur gerade \n 3= Nur ungerade Zahlen \n 4= Mit Modulo \n");
-    int numop = Convert.ToInt32(Console.ReadLine());
-    int num1 = -100; ;
-    if (numop == 1)
-    {
-        while (num1 <= 100){
-            Console.WriteLine(num1); 
-            num1++;
-        }
-    }
-        else if (numop == 2)
-    {
-        num1 = -101;
-        while (num1 <= 100)
-        {
+            Console.Write("Enter an opration \n 1= Zählen -100 bis 100 \n 2= Nur gerade \n 3= Nur ungerade Zahlen \n 4= Mit Modulo \n");
+            int numop = Convert.ToInt32(Console.ReadLine());
+            int num1 = -100; ;
+            if (numop == 1)
+            {
+                while (num1 <= 100){
+                    Console.WriteLine(num1); 
+                    num1++;
+                }
+            }
+            else if (numop == 2)
+            {
+                num1 = -100;
+                while (num1 <= 100)
+                {
             
-            if(num1 % 2 == 0)
-                Console.WriteLine(num1);
-                num1++;
-        }
+                    if(num1 % 2 == 0)
+                        Console.WriteLine(num1);
+                    num1++;
+                }
         
-    }
-        else if (numop == 3)
-    {
-        while (num1 <= 100)
-        {
-            if (num1 % 2 == 1 || num1 % 2 == -1) 
-                Console.WriteLine(num1);
-                num1++;
-        }
-    }
-        else if (numop == 4)
-    {
-        Console.Write("Enter Beepe: ");
-        int num2 = Convert.ToInt32(Console.ReadLine());
+            }
+            else if (numop == 3)
+            {
+                while (num1 <= 100)
+                {
+                    if (num1 % 2 == 1 || num1 % 2 == -1) 
+                        Console.WriteLine(num1);
+                    num1++;
+                }
+            }
+            else if (numop == 4)
+            {
+                Console.Write("Enter Beepe: ");
+                int num2 = Convert.ToInt32(Console.ReadLine());
         
-        while (num1 <= 100)
-        {
-            if (num1 % num2 == 0)
-            {
-                Console.WriteLine("Beep");
-                num1++;
-            }
-            else
-            {
-                Console.WriteLine(num1);
-                num1++;
-            }
-        }
+                while (num1 <= 100)
+                {
+                    if (num1 % num2 == 0)
+                    {
+                        Console.WriteLine("Beep");
+                        num1++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(num1);
+                        num1++;
+                    }
+                }
         
 
         
-    }
+            }
       
-        else
-    {
-        Console.WriteLine("Invalid input");
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
+    
+            Console.ReadLine();
+    
+        }
+    
     }
-    
-    Console.ReadLine();
-    
-    }
-    
-}
     
 }
